@@ -1,25 +1,28 @@
-import Counter from './Counter';
-import { useState } from 'react';
 import './style.css';
+import { useSelector, useDispatch } from 'react-redux'
+import {increment, decrement} from '../redux/count'
 
 const CounterMain = () => {
+  const count = useSelector((state) => state.counter.value)
+  const dispatch = useDispatch()
 
-  const [count, setCount] = useState(0);
-  const onValueChange = event => setCount(event.target.value);
-  
-  return ( 
-    <div className="container">
-        <label>
-          enter your starting number: 
-        </label>
-        <input 
-        type="number"
-        required
-        value={count}
-        onChange={onValueChange}
-        />
-        <div className="counter"> Count: { count } </div>
-        <Counter count = {count} setCount = {setCount}/>
+  return (
+    <div>
+      <div>
+        <button
+          aria-label="Increment value"
+          onClick={() => dispatch(increment())}
+        >
+          +
+        </button>
+        <span>{count}</span>
+        <button
+          aria-label="Decrement value"
+          onClick={() => dispatch(decrement())}
+          disabled={!count}
+        >
+          -
+        </button>
         <p 
           className='msg'
           style = {
@@ -29,9 +32,11 @@ const CounterMain = () => {
           }
         >
           You can't decrement below zero!!!!
-          </p>
+          <br/>the button will be disabled
+        </p>
       </div>
+    </div>
    );
 }
- 
+  
 export default CounterMain;

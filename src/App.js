@@ -3,7 +3,7 @@ import {BrowserRouter, Link, Route, Routes} from 'react-router-dom';
 import Home from "./Home";
 import Products from "./Products/Products";
 import Product from "./Products/Product";
-
+import './App.css'
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
   return (
   <BrowserRouter>
       <nav>
-        <div>logo</div>
+        <div className="logo">React Portoflio</div>
         <ul>
           <Link to='/'>Home</Link>
           <Link to='/counter'>Counter</Link>
@@ -23,7 +23,6 @@ function App() {
         <Route path="/products" element = {<Products />}/>
         <Route path="/product/:id" element = {<Product />}/>
         <Route path='/counter' element = {<CounterMain />}/>
-        
       </Routes>
   </BrowserRouter>
   );
