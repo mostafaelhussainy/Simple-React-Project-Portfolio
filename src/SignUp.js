@@ -1,7 +1,6 @@
 import { useForm, Controller } from 'react-hook-form';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 const animatedComponents = makeAnimated();
 const SignUp = () => {
@@ -12,32 +11,6 @@ const SignUp = () => {
         watch,
         formState: { errors },
     } = useForm();
-    const options = [
-        {
-            value: 1,
-            label: 'Men Wear',
-        },
-        {
-            value: 2,
-            label: 'Women Wear',
-        },
-        {
-            value: 3,
-            label: 'Electronic',
-        },
-        {
-            value: 4,
-            label: 'Cosmetics',
-        },
-        {
-            value: 5,
-            label: 'Jewelry',
-        },
-        {
-            value: 6,
-            label: 'Books',
-        },
-    ];
     const submitHandler = (data) => {
         console.log(data);
     };

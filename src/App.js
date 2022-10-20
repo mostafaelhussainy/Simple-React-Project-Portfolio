@@ -6,6 +6,7 @@ import Product from "./Products/Product";
 import Cart from "./Products/cart";
 import './App.css'
 import SignUp from "./SignUp";
+import SignIn from "./SignIn";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Link to='/products'>Products</Link>
           <Link to='/cart'>Cart</Link>
           <Link to='/signup'>Sign Up</Link>
+          <Link to='/signin'>Sign In</Link>
         </ul>
       </nav>
       <Routes>
@@ -29,6 +31,7 @@ function App() {
         <Route path='/counter' element = {<CounterMain />}/>
         <Route path='/cart' element = {<Cart />}/>
         <Route path='/signup' element = {<SignUp />}/>
+        <Route path='/signin' element = {<SignIn />}/>
       </Routes>
   </BrowserRouter>
   );
