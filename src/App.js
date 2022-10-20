@@ -5,6 +5,7 @@ import Products from "./Products/Products";
 import Product from "./Products/Product";
 import Cart from "./Products/cart";
 import './App.css'
+import SignUp from "./SignUp";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Link to='/counter'>Counter</Link>
           <Link to='/products'>Products</Link>
           <Link to='/cart'>Cart</Link>
+          <Link to='/signup'>Sign Up</Link>
         </ul>
       </nav>
       <Routes>
@@ -26,6 +28,7 @@ function App() {
         <Route path="/product/:id" element = {<Product />}/>
         <Route path='/counter' element = {<CounterMain />}/>
         <Route path='/cart' element = {<Cart />}/>
+        <Route path='/signup' element = {<SignUp />}/>
       </Routes>
   </BrowserRouter>
   );
